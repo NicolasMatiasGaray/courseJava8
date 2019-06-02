@@ -5,11 +5,12 @@ import lombok.Getter;
 @Getter
 public class Developer {
 
+    private Integer dni;
     private String name;
-
     private Integer age;
 
-    public Developer(String name, Integer age) {
+    public Developer(Integer dni, String name, Integer age) {
+        this.dni = dni;
         this.name = name;
         this.age = age;
     }
@@ -17,7 +18,8 @@ public class Developer {
     @Override
     public String toString() {
         return "Developer{" +
-                "name='" + name + '\'' +
+                "dni=" + dni +
+                ", name='" + name + '\'' +
                 ", age=" + age +
                 '}';
     }
