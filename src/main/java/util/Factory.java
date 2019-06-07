@@ -3,6 +3,7 @@ package util;
 import model.Developer;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Factory {
 
@@ -11,12 +12,18 @@ public class Factory {
         result.add(new Developer(123,"Nicolas",29));
         result.add(new Developer(456,"Martin",20));
         result.add(new Developer(789,"Juan",10));
+        result.add(new Developer(789,"Juan2",10));
         return result;
     }
 
     public static Map<Integer,Developer> getDevelopersById(){
-        Map<Integer, Developer> developers = new TreeMap<>();
-        getDevelopers().forEach(d -> developers.put(d.getDni(), d));
+        // Way A
+//        Map<Integer, Developer> developers = new TreeMap<>();
+//        getDevelopers().forEach(d -> developers.put(d.getDni(), d));
+//        return developers;
+
+        Map<Integer, Developer> developers = getDevelopers().stream().collect(
+                Collectors.toMap(d -> d.getDni(), d -> d, (d1, d2) -> d1));
         return developers;
     }
 }
