@@ -10,9 +10,9 @@ public class Factory {
     public static List<Developer> getDevelopers() {
         List<Developer> result = new ArrayList<Developer>();
         result.add(new Developer(123,"Nicolas",29));
-        result.add(new Developer(456,"Martin",20));
-        result.add(new Developer(789,"Juan",10));
-        result.add(new Developer(789,"Juan2",10));
+        result.add(new Developer(456,"Martin",25));
+        result.add(new Developer(789,"Juan",19));
+        result.add(new Developer(789,"Juan2",19));
         return result;
     }
 
